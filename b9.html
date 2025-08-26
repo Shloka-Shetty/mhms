@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="x-ua-cOMPATIBLE" content="IE=EDGE"/>
+      <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>BLOG 9</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --orange: #ffa500;
+    --dark-bg: #221a1a;
+    --light-bg: #f8f8f8;
+    --text-color: #333;
+    --white: #fff;
+}
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+*::selection {
+    background: var(--orange);
+    color: var(--white);
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-size: 1.6rem;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--dark-bg);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+header .logo span {
+    color: var(--orange);
+}
+
+header .navbar a {
+    color: var(--white);
+    font-size: 1.8rem;
+    margin: 0 .8rem;
+    transition: color 0.2s ease-in-out;
+}
+
+header .navbar a:hover {
+    color: var(--orange);
+}
+
+header .icons i {
+    font-size: 2.5rem;
+    color: var(--white);
+    cursor: pointer;
+    margin-right: 2rem;
+    transition: color 0.2s ease-in-out;
+}
+
+header .icons i:hover {
+    color: var(--orange);
+}
+
+#menu-bar {
+    display: none;
+    color: var(--white);
+    border: .1rem solid var(--white);
+    border-radius: .5rem;
+    font-size: 3rem;
+    padding: .5rem 1.2rem;
+    cursor: pointer;
+}
+
+.top-container {
+    background-image: url('https://images.unsplash.com/photo-1653233797467-1a528819fd4f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.top-container h1 {
+    color: #fff;
+    font-size: 4rem;
+    font-family: 'Impact', 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 2px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+}
+
+.bottom-container {
+    padding: 2rem 5%;
+    background: var(--white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    margin: 2rem 9%;
+}
+
+.bottom-container p.text {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin: 2rem 0;
+}
+
+.bottom-container p.text b {
+    color: var(--orange);
+}
+
+.footer {
+    background: var(--dark-bg);
+    color: var(--white);
+    padding: 2rem 9%;
+}
+
+.footer .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.footer .box {
+    flex: 1 1 22rem;
+    padding: 1rem 0;
+}
+
+.footer .box h3 {
+    font-size: 2.2rem;
+    padding: .7rem 0;
+    color: var(--white);
+}
+
+.footer .box p {
+    font-size: 1.6rem;
+    padding: .7rem 0;
+    color: #ddd;
+}
+
+.footer .box a {
+    display: block;
+    font-size: 1.6rem;
+    padding: .7rem 0;
+    color: #ddd;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer .box a:hover {
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+.footer .credit {
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 1.8rem;
+    color: var(--white);
+    border-top: .1rem solid rgba(255, 255, 255, 0.2);
+}
+
+.footer .credit span {
+    color: var(--orange);
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    header {
+        padding: 1.5rem 5%;
+    }
+
+    section {
+        padding: 1.5rem 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-bar {
+        display: block;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: var(--dark-bg);
+        border-top: .1rem solid rgba(255, 255, 255, 0.2);
+        padding: 1rem 2rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path 0.5s ease-in-out;
+    }
+
+    header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    header .navbar a {
+        display: block;
+        border-radius: .5rem;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        background: var(--dark-bg);
+    }
+}
+
+
+
+</style>
+</head>
+<body>
+    <header>
+        <div id="menu-bar" class="fas fa-bars" ></div>
+
+        <a href="#" class="logo"><span>S</span>arva <span>S</span>arathi</a> 
+        <nav class="navbar">
+            <a href="index.php#home">Home</a>
+            <a href="index.php#packages">Packages</a>
+            <a href="index.php#services">Services</a>
+            <a href="index.php#blogs">Blogs</a>
+            <a href="index.php#book">Book</a>
+            <a href="index.php#review">Review</a>
+            <a href="index.php">Contact</a>
+        </nav>
+        
+    </header>
+<div class="top-container">
+      <h1>THE BENEFITS OF ECO-FRIENDLY CLEANING <br> PRODUCTS AND TECHNIQUES</h1>
+</div>
+<div class="bottom-container">
+<p class="text">
+    <b>The benefits of eco-friendly cleaning products and techniques</b> <br><br>
+    Have you considered green cleaning but are unsure of its superiority to traditional cleaning? There are numerous advantages to switching to non-toxic cleaning over conventional cleaning products that contain chemicals as stated by experts of Maid .<br><br>
+    In today’s busy world, where everything seems to be at our fingertips, it is easy to find ourselves gravitating towards products that promise a quick and easy clean without ever pausing to consider exactly what it is we are bringing into our homes. Cleaning is essential to maintaining our health and the appearance of our homes overall. The sad reality is that the majority of cleaning products you can buy off the shelf are packed with harsh chemicals that can harm your family and the environment.<br><br>
+    The benefits of eco-friendly cleaning are numerous. Here are some of the main arguments for switching to eco-friendly plant-based products in your home right away.<br><br>
+   <b>1. Making your house safer</b>
+    You can pretty much tell that some conventional cleaning products are not very safe if they have labels like these. When combined, many chemicals—including ammonia and chlorine bleach—can be extremely dangerous.<br><br>
+    As a result of their greater exposure levels due to their size, small children and animals are particularly at risk. Additionally, among the top ten substances in the world that cause poisoning exposure are household cleaning products. Reduce your risk by using environmentally friendly cleaning supplies that are less hazardous and toxic.<br><br>
+   <b>2. Take Care of Your Health</b>
+    Utilise green cleaning supplies to literally feel better. You will be confident that what you’re using won’t harm you, your family, or your pets, unlike conventional cleaning products. Once you stop using toxic cleaning chemicals, symptoms such as coughing, sneezing, skin rashes, headaches, and more may go away.<br><br>
+    Because many of the dangerous chemicals in conventional products are frequently teratogens, neurotoxins, mutagens, carcinogens, or endocrine disruptors, switching to natural, eco-friendly alternatives is worthwhile.<br><br>
+   <b>3. Make Your Indoor Air Cleaner</b>
+    Did you know that using traditional cleaning supplies can make indoor pollution higher than outdoor pollution? Volatile organic compounds (VOCs), which are released when products are used and stored and can linger in the air for a long time after use, have been linked to a variety of health issues, including liver, kidney, and central nervous system damage. Not even worth a cough, that. Knowing that this is not an issue with truly green cleaning supplies will make you feel better.<br><br>
+    While using harmful chemicals around your home carries several risks, one that you might not be aware of is how using harsh chemical cleaners can contaminate the air in your house through the evaporation of toxic fumes and vapours.<br><br>
+<b>4. Improve the environment</b>
+    You are casting a vote for environmental protection when you decide to use green cleaning products. The best environmentally friendly cleaning products are made with naturally occurring, secure, non-toxic, and biodegradable ingredients that do not harm the environment.<br><br>
+    On the other hand, some conventional cleaning products contain toxic, risky, non-biodegradable, and petroleum-based ingredients, which have a negative impact on the ecosystems of the planet.<br><br>
+    Although common household cleaning supplies are not frequently thought of as pollutants, the harsh chemicals they contain harm drinking water quality, cause smog, and are toxic to both plants and animals. It is challenging for water treatment facilities to remove them in large volumes when they’re flushed into the water system, and some of them can’t be removed at all.<br><br>
+    Eco-friendly cleaning products are safer and a much better choice for the environment because they do not contain any of these extremely harmful chemicals, like chlorine, phosphates, and nitrates, which pollute the environment. Utilising items like these is an excellent way to lessen your carbon footprint.<br><br>
+  <b> 5. Spend less money</b>
+    Commercial cleaning supplies used by house maid in Jaipur can be pricey because of the complex chemical mixtures they are made of. Instead of paying for the quality of the product itself, consumers frequently pay for the prestige of the brand and the expense of developing its packaging. Natural plant-based ingredients that literally do not cost the Earth are found in eco-friendly cleaning products. You can save even more if you purchase in bulk.<br><br>
+    Make your own green cleaning supplies to save money, or buy eco-friendly all-purpose cleaners that can handle multiple tasks to eliminate the need for additional purchases. Natural cleaning products are frequently priced similarly to their conventional, chemical-laden counterparts, and in some cases even less expensive, as more and more manufacturers enter the green cleaning market.<br><br>
+  <b>6.  Make cleaning simpler</b>
+    Having a small collection of products that can handle all your cleaning requirements is much simpler than having a large collection of toxic products. For instance, vinegar can easily take the place of various cleaning products such as toilet bowl cleaners, window cleaners, all-purpose cleaners, and more.<br><br>
+    When cleaning your home, you can frequently handle several cleaning tasks without switching products. Additionally, when you use green cleaning products, you do not have to worry about bleach stains on your clothing or accidentally combining harmful chemicals.Baking soda is an excellent oven cleaner. To make a thick paste, combine it with a little water. Spread the paste over the oven’s glass and other grimy surfaces, but keep it away from the heating element.<br><br>
+    At least 20 minutes, ideally overnight, should pass before wiping it up with a fresh cloth. It might leave some grit on your oven, which you can get rid of by misting some white vinegar over the leftover substance.You can more easily wipe up the residue after the reaction between the vinegar and bicarbonate of soda. Enjoy your oven, which is spotless!<br><br>
+  <b> 7. Contribute to Your Community</b>
+    Many green cleaning product producers are very conscious of their social responsibility and frequently donate a portion of their earnings to groups that promote social, environmental, and educational change. Therefore, by buying goods from these businesses, you are also contributing to your community, whether it be local or global.<br><br>
+   <b>8.  Know what is in the cleaning supplies you use</b>
+    Unlike most conventional cleaning products, eco-friendly brands tend to be completely transparent with their customers about the ingredients they use—or, rather, do not use—in their products. While some conventional manufacturers do not and might only list a portion of their ingredients, many green cleaning manufacturers make it a policy to be completely transparent. Making your own cleaners, however, will ensure that you use only the purest ingredients.<br><br>
+   <b> CONCLUSION </b><br>
+    These are some ways and benefits of using eco-friendly cleaning supplies. Want the best reliable maid service? Contact us right away.
+</p>
+</div>
+<script>
+let menu = document.querySelector('#menu-bar');
+let navbar = document.querySelector('.navbar');
+
+window.onscroll = () =>{
+    menu.classList.remove('fa-times');
+    navbar.classList.remove('active');
+    
+}
+
+menu.addEventListener('click', () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+});
+</script>
+</body>
+
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>About Us</h3>
+           <p>Our skilled team offers tailored services with top-notch equipment and products. Enjoy hassle-free cleaning with a customized plan that suits your budget and schedule. Book now for exceptional customer service and a sparkling clean space.</p>
+        </div>
+        <div class="box">
+            <h3>Branch Location</h3>
+           <a href="#">Udupi</a>
+           <a href="#">Kundapura</a>
+           <a href="#">Kota</a>
+           <a href="#">Brahmavar</a>
+        </div>
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="index.php#home">Home</a>
+                <a href="index.php#packages">Packages</a>
+                <a href="index.php#services">Services</a>
+                <a href="index.php#blogs">Blogs</a>
+                <a href="index.php#book">Book</a>
+                <a href="index.php#review">Review</a>
+                <a href="index.php#contact">Contact</a>
+    
+        </div>
+        <div class="box">
+            <h3>Contact</h3>
+           <a href="#">9686143248</a>
+           <a href="#">9902554356</a>
+           <a href="#">saravasarathi@gmail.com</a>
+           <a href="#">Near kedior hotel,udupi</a>
+        </div>
+
+</div>
+
+<h1 class="credit">created by <span>avs</span> all rights reserved!</h1>
+</section>
+
+<html>

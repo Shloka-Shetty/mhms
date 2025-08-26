@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="IE=EDGE" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>BLOG 2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap">
+    <style>
+        :root {
+            --orange: #ffa500;
+            --dark-bg: #221a1a;
+            --light-bg: #f9f9f9;
+            --text-color: #333;
+            --white: #fff;
+        }
+
+        * {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            transition: all .2s linear;
+        }
+
+        *::selection {
+            background: var(--orange);
+            color: var(--white);
+        }
+
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-size: 1.6rem;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        section {
+            padding: 2rem 9%;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--dark-bg);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem 9%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            font-size: 2.5rem;
+            font-weight: bolder;
+            color: var(--white);
+            text-transform: uppercase;
+        }
+
+        header .logo span {
+            color: var(--orange);
+        }
+
+        header .navbar a {
+            color: var(--white);
+            font-size: 1.8rem;
+            margin: 0 .8rem;
+            transition: color 0.2s ease-in-out;
+        }
+
+        header .navbar a:hover {
+            color: var(--orange);
+        }
+
+        header .icons i {
+            font-size: 2.5rem;
+            color: var(--white);
+            cursor: pointer;
+            margin-right: 2rem;
+            transition: color 0.2s ease-in-out;
+        }
+
+        header .icons i:hover {
+            color: var(--orange);
+        }
+
+        #menu-bar {
+            display: none;
+            color: var(--white);
+            border: .1rem solid var(--white);
+            border-radius: .5rem;
+            font-size: 3rem;
+            padding: .5rem 1.2rem;
+            cursor: pointer;
+        }
+
+        .top-container {
+            background-image: url('https://images.unsplash.com/photo-1653233797467-1a528819fd4f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .top-container h1 {
+            color: #fff;
+            font-size: 4rem;
+            font-family: 'Impact', 'Arial Narrow Bold', sans-serif;
+            letter-spacing: 2px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+        }
+
+        .bottom-container {
+            padding: 2rem 5%;
+            background: var(--white);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 1rem;
+            margin: 2rem 9%;
+        }
+
+        .bottom-container p.text {
+            font-size: 1.8rem;
+            color: var(--text-color);
+            margin: 2rem 0;
+        }
+
+        .bottom-container p.text b {
+            color: var(--orange);
+        }
+
+        .footer {
+            background: var(--dark-bg);
+            color: var(--white);
+            padding: 2rem 9%;
+        }
+
+        .footer .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+        }
+
+        .footer .box {
+            flex: 1 1 22rem;
+            padding: 1rem 0;
+        }
+
+        .footer .box h3 {
+            font-size: 2.2rem;
+            padding: .7rem 0;
+            color: var(--white);
+        }
+
+        .footer .box p {
+            font-size: 1.6rem;
+            padding: .7rem 0;
+            color: #ddd;
+        }
+
+        .footer .box a {
+            display: block;
+            font-size: 1.6rem;
+            padding: .7rem 0;
+            color: #ddd;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .footer .box a:hover {
+            color: var(--orange);
+            text-decoration: underline;
+        }
+
+        .footer .credit {
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 1.8rem;
+            color: var(--white);
+            border-top: .1rem solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer .credit span {
+            color: var(--orange);
+        }
+
+        @media (max-width: 1200px) {
+            html {
+                font-size: 55%;
+            }
+        }
+
+        @media (max-width: 991px) {
+            header {
+                padding: 1.5rem 5%;
+            }
+
+            section {
+                padding: 1.5rem 5%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #menu-bar {
+                display: block;
+            }
+
+            header .navbar {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                background: var(--dark-bg);
+                border-top: .1rem solid rgba(255, 255, 255, 0.2);
+                padding: 1rem 2rem;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: clip-path 0.5s ease-in-out;
+            }
+
+            header .navbar.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+
+            header .navbar a {
+                display: block;
+                border-radius: .5rem;
+                padding: 1.5rem;
+                margin: 1.5rem 0;
+                background: var(--dark-bg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="menu-bar" class="fas fa-bars"></div>
+        <a href="#" class="logo"><span>S</span>arva <span>S</span>arathi</a>
+        <nav class="navbar">
+            <a href="index.php#home">Home</a>
+            <a href="index.php#packages">Packages</a>
+            <a href="index.php#services">Services</a>
+            <a href="index.php#blogs">Blogs</a>
+            <a href="index.php#book">Book</a>
+            <a href="index.php#review">Review</a>
+            <a href="index.php">Contact</a>
+            <a href="b3.html">Next Blog</a>
+        </nav>
+    </header>
+
+    <div class="top-container">
+        <h1>THE ESSENTIAL HOUSE CLEANING HACKS FROM <br> PROFESSIONAL CLEANERS: SARVA SARATHI</h1>
+    </div>
+    <div class="bottom-container">
+        <p class="text">
+            <b>Bathroom Hacks</b>
+            Pour your liquid cleaner on to the base of your toilet brush. Doing this will help you have everything in
+            one place so you don't have to scrub it separately, just give the bowl a quick wipe whenever you need to, it
+            works wonders at washing away dirt, grime, and any other build-up that's collected. <br> <br>
+            Invest in a microfibre cloth for glass surfaces. Microfiber cloths used for office cleaning services in
+            Mumbai are extremely effective at cleaning glass. Just a quick spritz and you can clean everything from
+            glass windows, mirrors, and any other reflective surface easily. It doesn't leave any streaks and gives the
+            perfect shine.<br> <br>
+            Your shower door will benefit from a steel wool pad. A steel wool pad is quite popular in every home
+            cleaning service. The reason being that this pad is specially designed for glass and other delicate surfaces
+            and will not scratch it while giving it a good clean. It's great for all those hard to clean surfaces
+            leaving them shiny and new.<br> <br>
+            <b>Kitchen Hacks</b>
+            Use a warm water bowl to clean the microwave. When cleaning your microwave, place a bowl of water with
+            vinegar and cut lemon slices inside, and set it on high for around ten minutes. The steam created removes
+            all the dirt, food particles, and gunk which you can then clean with a paper towel or a soft sponge.<br>
+            <br>
+            Baby oil can come in handy for stainless steel. Like the best home cleaning services, you too can achieve
+            sparkly clean stainless steel. All you need to do is add a dollop of baby oil to a sponge pad and wipe the
+            hundi or item in the opposite direction (get into the creases or wherever you see dirt). The oil helps
+            loosen up water spots and dirt making it easier to wash and clean the next time around.<br> <br>
+            Use cream of tartar for glistening plates. Most people throw out their china or other plates when they
+            notice a greyish scuff mark on it that's very hard to remove but you don't need to do that anymore. Cream of
+            tartar is scientifically known to remove scuff marks completely, all you need to do is make it into a paste
+            with a little water and rub it into the marks, wash and wipe dry.<br> <br>
+            <b>Home Hacks</b>
+            Cleaning your hardwood floors. The key to cleaning hardwood floors at home is to use a microfibre mop that
+            is only slightly damp. The microfibre kills germs without requiring soap, using any liquid cleaners will
+            leave a mark on your floor.<br> <br>
+            Using a lint roller for dust. Used by office cleaning services in Mumbai, a lint roller can gather dust from
+            a variety of surfaces including fake plants, sofas, curtains, lampshades, and more.
+        </p>
+        Easily clean your fans using a pillowcase. Using a pillowcase is a fast and effective method to clean ceiling
+        fans. All you need to do is slip a pillow cover over the fan blade and gently pull right to the end. You can
+        also use a water and vinegar solution for added effect.<br> <br>
+        <b>Conclusion</b>
+        These cleaning tips will save you a lot of time and effort and make cleaning a bit more fun.</p>
+    </div>
+    </div>
+
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>About Us</h3>
+                <p>Our skilled team offers tailored services with top-notch equipment and products. Enjoy hassle-free
+                    cleaning with a customized plan that suits your budget and schedule. Book now for exceptional
+                    customer service and a sparkling clean space.</p>
+            </div>
+            <div class="box">
+                <h3>Branch Location</h3>
+                <a href="#">Udupi</a>
+                <a href="#">Kundapura</a>
+                <a href="#">Kota</a>
+                <a href="#">Brahmavar</a>
+            </div>
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="index.php#home">Home</a>
+                <a href="index.php#packages">Packages</a>
+                <a href="index.php#services">Services</a>
+                <a href="index.php#blogs">Blogs</a>
+                <a href="index.php#book">Book</a>
+                <a href="index.php#review">Review</a>
+                <a href="index.php#contact">Contact</a>
+
+            </div>
+            <div class="box">
+                <h3>Contact</h3>
+                <a href="#">9686143248</a>
+                <a href="#">9902554356</a>
+                <a href="#">saravasarathi@gmail.com</a>
+                <a href="#">Near kedior hotel,udupi</a>
+            </div>
+        </div>
+        <h1 class="credit">created by <span>avs</span> | all rights reserved!</h1>
+    </section>
+
+    <script>
+        let menu = document.querySelector('#menu-bar');
+        let navbar = document.querySelector('.navbar');
+
+        window.onscroll = () => {
+            menu.classList.remove('fa-times');
+            navbar.classList.remove('active');
+        }
+
+        menu.addEventListener('click', () => {
+            menu.classList.toggle('fa-times');
+            navbar.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

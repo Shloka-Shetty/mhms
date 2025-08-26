@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="x-ua-cOMPATIBLE" content="IE=EDGE"/>
+      <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>BLOG 5</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --orange: #ffa500;
+    --dark-bg: #221a1a;
+    --light-bg: #f8f8f8;
+    --text-color: #333;
+    --white: #fff;
+}
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+*::selection {
+    background: var(--orange);
+    color: var(--white);
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-size: 1.6rem;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--dark-bg);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+header .logo span {
+    color: var(--orange);
+}
+
+header .navbar a {
+    color: var(--white);
+    font-size: 1.8rem;
+    margin: 0 .8rem;
+    transition: color 0.2s ease-in-out;
+}
+
+header .navbar a:hover {
+    color: var(--orange);
+}
+
+header .icons i {
+    font-size: 2.5rem;
+    color: var(--white);
+    cursor: pointer;
+    margin-right: 2rem;
+    transition: color 0.2s ease-in-out;
+}
+
+header .icons i:hover {
+    color: var(--orange);
+}
+
+#menu-bar {
+    display: none;
+    color: var(--white);
+    border: .1rem solid var(--white);
+    border-radius: .5rem;
+    font-size: 3rem;
+    padding: .5rem 1.2rem;
+    cursor: pointer;
+}
+
+.top-container {
+    background-image: url('https://images.unsplash.com/photo-1653233797467-1a528819fd4f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.top-container h1 {
+    color: #fff;
+    font-size: 4rem;
+    font-family: 'Impact', 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 2px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+}
+
+.bottom-container {
+    padding: 2rem 5%;
+    background: var(--white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    margin: 2rem 9%;
+}
+
+.bottom-container p.text {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin: 2rem 0;
+}
+
+.bottom-container p.text b {
+    color: var(--orange);
+}
+
+.footer {
+    background: var(--dark-bg);
+    color: var(--white);
+    padding: 2rem 9%;
+}
+
+.footer .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.footer .box {
+    flex: 1 1 22rem;
+    padding: 1rem 0;
+}
+
+.footer .box h3 {
+    font-size: 2.2rem;
+    padding: .7rem 0;
+    color: var(--white);
+}
+
+.footer .box p {
+    font-size: 1.6rem;
+    padding: .7rem 0;
+    color: #ddd;
+}
+
+.footer .box a {
+    display: block;
+    font-size: 1.6rem;
+    padding: .7rem 0;
+    color: #ddd;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer .box a:hover {
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+.footer .credit {
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 1.8rem;
+    color: var(--white);
+    border-top: .1rem solid rgba(255, 255, 255, 0.2);
+}
+
+.footer .credit span {
+    color: var(--orange);
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    header {
+        padding: 1.5rem 5%;
+    }
+
+    section {
+        padding: 1.5rem 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-bar {
+        display: block;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: var(--dark-bg);
+        border-top: .1rem solid rgba(255, 255, 255, 0.2);
+        padding: 1rem 2rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path 0.5s ease-in-out;
+    }
+
+    header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    header .navbar a {
+        display: block;
+        border-radius: .5rem;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        background: var(--dark-bg);
+    }
+}
+
+
+
+
+</style>
+</head>
+<body>
+    <header>
+        <div id="menu-bar" class="fas fa-bars" ></div>
+
+        <a href="#" class="logo"><span>S</span>arva <span>S</span>arathi</a> 
+        <nav class="navbar">
+            <a href="index.php#home">Home</a>
+            <a href="index.php#packages">Packages</a>
+            <a href="index.php#services">Services</a>
+            <a href="index.php#blogs">Blogs</a>
+            <a href="index.php#book">Book</a>
+            <a href="index.php#review">Review</a>
+            <a href="index.php">Contact</a>
+            <a href="b6.html">Next Blog</a>
+        </nav>
+        
+    </header>
+<div class="top-container">
+      <h1>5 KEY ADVANTAGES OF HIRING HOME CARE GIVERS</h1>
+</div>
+<div class="bottom-container">
+<p class="text">
+    Do you have any aged family member at your house requiring special attention due to geriatric issues? Is any of your family members suffering from a disease and require constant medical care? If these are related to you, then you can consider home care services in Mumbai so that you can carry out your day to day activities without any tension of your parents or other family member's health conditions. Professional elder care services in Mumbai employs caring and affectionate individuals after conducting a thorough background check through eligible agencies. They take care of your parents, offer them company, prepare customised food, and provide necessary first aid in case of medical emergencies. <br><br>
+    Here are 5 advantages of hiring home caregivers that you should know:<br><br>
+   <b> Professional Care at House</b> 
+    If your parents or close family aids are suffering from a prolonged medical issue, you are left with two choices. You can either get them admitted to a medical institute and let the nurses and other medical staff take care of them, or you can hire a trained caregiver from house maid service provider in Mumbai. The latter is a better option as it gives your ailing family member the freedom and peace-of-mind of staying in the comfort of the house and getting care at the same time. <br><br>
+   <b> Personalised Care</b> 
+    Medical staff at nursing homes and hospitals do not offer personalised care to patients as they need to take care of many people at the same time. Moreover, you need to follow specific rules and restrictions while visiting your family members at hospitals. Elder care services in Mumbai can take care of these issues in a hassle-free manner. They take care of your parents in the same way as you would offer time to them. <br><br>
+    <b> Help around the House</b>
+    Old age comes with many restrictions in life. Even if you are not suffering from any medical conditions, it becomes challenging preparing food, weekly shopping, doing laundry, and regular cleaning of the house. In such a situation, hiring a professional maid from home care services in Mumbai solves your problem to a great extent. They help you with house chores so that you can live a stress-free life.<br><br>
+    <b> Prevent Loneliness at Old Age</b>
+    These days, many of you might have to stay alone at an old age if your children relocate to different locations for a better career opportunity. Housemaids offer you company so that you never feel depressed due to loneliness in these circumstances. In many cases, these close aids develop a friendly relationship with you and become more like a family member.<br><br>
+   <b>Cost Effective</b> 
+    Opting for house maid services in Mumbai is a cost-effective decision then admitting your aged family members to a rehabilitation centre or a nursing home. Now you no longer need to worry about hefty medical bills of repetitive tests when you hire a caregiver at home. You just need to pay a monthly salary for the housemaid along with the charges of the agency employing them.<br><br>
+    These are the top 5 advantages of hiring home caregivers. Hopefully, now you can make an informed decision when you are looking for help to care for your ailing or aging family member.
+</p>
+</div>
+<script>
+ let menu = document.querySelector('#menu-bar');
+let navbar = document.querySelector('.navbar');
+
+window.onscroll = () =>{
+    menu.classList.remove('fa-times');
+    navbar.classList.remove('active');
+    
+}
+
+menu.addEventListener('click', () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+});
+</script>
+</body>
+
+<section class="footer">
+    <div class="box-container">
+
+        <div class="box">
+            <h3>About Us</h3>
+           <p>Our skilled team offers tailored services with top-notch equipment and products. Enjoy hassle-free cleaning with a customized plan that suits your budget and schedule. Book now for exceptional customer service and a sparkling clean space.</p>
+        </div>
+        <div class="box">
+            <h3>Branch Location</h3>
+           <a href="#">Udupi</a>
+           <a href="#">Kundapura</a>
+           <a href="#">Kota</a>
+           <a href="#">Brahmavar</a>
+        </div>
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="index.php">Home</a>
+                <a href="index.php#packages">Packages</a>
+                <a href="index.php#services">Services</a>
+                <a href="index.php#blogs">Blogs</a>
+                <a href="index.php#book">Book</a>
+                <a href="index.php#review">Review</a>
+                <a href="index.php#contact">Contact</a>
+    
+        </div>
+        <div class="box">
+            <h3>Contact</h3>
+           <a href="#">9686143248</a>
+           <a href="#">9902554356</a>
+           <a href="#">saravasarathi@gmail.com</a>
+           <a href="#">Near kedior hotel,udupi</a>
+        </div>
+</div>
+
+<h1 class="credit">created by <span>avs</span> | all rights reserved!</h1>
+</section>
+
+<html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="x-ua-cOMPATIBLE" content="IE=EDGE"/>
+      <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>BLOG 4</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --orange: #ffa500;
+    --dark-bg: #221a1a;
+    --light-bg: #f8f8f8;
+    --text-color: #333;
+    --white: #fff;
+}
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+*::selection {
+    background: var(--orange);
+    color: var(--white);
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-size: 1.6rem;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--dark-bg);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+header .logo span {
+    color: var(--orange);
+}
+
+header .navbar a {
+    color: var(--white);
+    font-size: 1.8rem;
+    margin: 0 .8rem;
+    transition: color 0.2s ease-in-out;
+}
+
+header .navbar a:hover {
+    color: var(--orange);
+}
+
+header .icons i {
+    font-size: 2.5rem;
+    color: var(--white);
+    cursor: pointer;
+    margin-right: 2rem;
+    transition: color 0.2s ease-in-out;
+}
+
+header .icons i:hover {
+    color: var(--orange);
+}
+
+#menu-bar {
+    display: none;
+    color: var(--white);
+    border: .1rem solid var(--white);
+    border-radius: .5rem;
+    font-size: 3rem;
+    padding: .5rem 1.2rem;
+    cursor: pointer;
+}
+
+.top-container {
+    background-image: url('https://images.unsplash.com/photo-1653233797467-1a528819fd4f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.top-container h1 {
+    color: #fff;
+    font-size: 4rem;
+    font-family: 'Impact', 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 2px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+}
+
+.bottom-container {
+    padding: 2rem 5%;
+    background: var(--white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    margin: 2rem 9%;
+}
+
+.bottom-container p.text {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin: 2rem 0;
+}
+
+.bottom-container p.text b {
+    color: var(--orange);
+}
+
+.footer {
+    background: var(--dark-bg);
+    color: var(--white);
+    padding: 2rem 9%;
+}
+
+.footer .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.footer .box {
+    flex: 1 1 22rem;
+    padding: 1rem 0;
+}
+
+.footer .box h3 {
+    font-size: 2.2rem;
+    padding: .7rem 0;
+    color: var(--white);
+}
+
+.footer .box p {
+    font-size: 1.6rem;
+    padding: .7rem 0;
+    color: #ddd;
+}
+
+.footer .box a {
+    display: block;
+    font-size: 1.6rem;
+    padding: .7rem 0;
+    color: #ddd;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer .box a:hover {
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+.footer .credit {
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 1.8rem;
+    color: var(--white);
+    border-top: .1rem solid rgba(255, 255, 255, 0.2);
+}
+
+.footer .credit span {
+    color: var(--orange);
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    header {
+        padding: 1.5rem 5%;
+    }
+
+    section {
+        padding: 1.5rem 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-bar {
+        display: block;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: var(--dark-bg);
+        border-top: .1rem solid rgba(255, 255, 255, 0.2);
+        padding: 1rem 2rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path 0.5s ease-in-out;
+    }
+
+    header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    header .navbar a {
+        display: block;
+        border-radius: .5rem;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        background: var(--dark-bg);
+    }
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+    <header>
+        <div id="menu-bar" class="fas fa-bars" ></div>
+
+        <a href="#" class="logo"><span>S</span>arva <span>S</span>arathi</a> 
+        <nav class="navbar">
+            <a href="index.php#home">Home</a>
+            <a href="index.php#packages">Packages</a>
+            <a href="index.php#services">Services</a>
+            <a href="index.php#blogs">Blogs</a>
+            <a href="index.php#book">Book</a>
+            <a href="index.php#review">Review</a>
+            <a href="index.php">Contact</a>
+            <a href="b5.html">Next Blog</a>
+        </nav>
+        
+    </header>
+<div class="top-container">
+      <h1>HELPFUL TIPS TO PREPARE YOUR KIDS <br> FOR A NEW BABYSITTER</h1>
+</div>
+<div class="bottom-container">
+<p class="text">
+    It's often a nightmare for parents to invest in babysitting. If you are about to take up the service of a new babysitter for your child, there are certain things that you need to keep in mind. Most people make the mistake of leaving their child with the babysitter instantly he/she arrives at your home for the first time. <br><br>
+    It is a fact that people act differently with different people. Speaking about kids, this difference increases. Dad and mom are the two people who the child is comfortable with in most cases. So if you leave your child with a strange (from the child's perspective), they may react differently. If you have two kids, then no surprise that this will turn your house into a battlefield and a World War-3 may breakout. <br><br>
+    A skilled babysitter from a reputed babysitter service in Mumbai will deal with this war brilliantly. But once broke out then it's so difficult to control that. So you can also do many things to prevent this, before the arrival of that new stranger into your house. The preceding are some useful tips in which you can ease the process of introduction of your child to a new maid for baby care in Mumbai: - <br><br>
+   <b> Make your kids aware of the arrival earlier</b>
+    This will help your kids get acquainted with the new babysitter.<br><br>
+    <b> Feel your kids in control</b>
+    There is a study that reveals that the child resists change when he/she feels more in control.<br><br>
+    <b> Involve your kid</b>
+    Check their recommendations for a new babysitter. Ask them in which way they will feel comfortable.<br><br>
+    <b>Initiate some activities</b>
+    You know very well what your child wants? So chat up the activities that your child likes and hand it over to the babysitter so that the child will have an affection to them also.<br><br>
+    <b>Make sure your child expects the right thing</b>
+    Tell them what to expect from this new person and what not to.<br><br>
+    <b>Make them aware of the safety precautions</b>
+    Children will often give attention when calmly explained about potential safety than potential dangers. Minimise the curiosity in them so that they won't fall prone to such dangers.<br><br>
+    <b>Thorough your child with the rules that you make</b>
+    Make rules and timings and make this aware of the babysitter and your child also. So that it won't change and goes accordingly.<br><br>
+    <b> Offer assurance to your kids</b>
+    This will definitely increase the trustworthiness of your child.<br><br>
+    <b>  Make your child free to say anything</b>
+    So that your child can talk freely with you about the happenings of the day.<br><br>
+    With these tips you can easily ensure that your kids are comfortable with the new maid. But there is one thing which you must ensure and that is to select only the best and most reliable Maid services in Mumbai. This will help you avail the services of experienced maids as well as ensure the safety of your kids with them.
+</p>
+</div>
+<script>
+ let menu = document.querySelector('#menu-bar');
+let navbar = document.querySelector('.navbar');
+
+window.onscroll = () =>{
+    menu.classList.remove('fa-times');
+    navbar.classList.remove('active');
+    
+}
+
+menu.addEventListener('click', () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+});
+</script>
+</body>
+
+<section class="footer">
+    <div class="box-container">
+
+        <div class="box">
+            <h3>About Us</h3>
+           <p>Our skilled team offers tailored services with top-notch equipment and products. Enjoy hassle-free cleaning with a customized plan that suits your budget and schedule. Book now for exceptional customer service and a sparkling clean space.</p>
+        </div>
+        <div class="box">
+            <h3>Branch Location</h3>
+           <a href="#">Udupi</a>
+           <a href="#">Kundapura</a>
+           <a href="#">Kota</a>
+           <a href="#">Brahmavar</a>
+        </div>
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="index.php">Home</a>
+                <a href="index.php#packages">Packages</a>
+                <a href="index.php#services">Services</a>
+                <a href="index.php#blogs">Blogs</a>
+                <a href="index.php#book">Book</a>
+                <a href="index.php#review">Review</a>
+                <a href="index.php#contact">Contact</a>
+    
+        </div>
+        <div class="box">
+            <h3>Contact</h3>
+           <a href="#">9686143248</a>
+           <a href="#">9902554356</a>
+           <a href="#">saravasarathi@gmail.com</a>
+           <a href="#">Near kedior hotel,udupi</a>
+        </div>
+</div>
+
+<h1 class="credit">created by <span>avs</span> | all rights reserved!</h1>
+</section>
+
+<html>

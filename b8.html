@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="x-ua-cOMPATIBLE" content="IE=EDGE"/>
+      <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>BLOG 8</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --orange: #ffa500;
+    --dark-bg: #221a1a;
+    --light-bg: #f8f8f8;
+    --text-color: #333;
+    --white: #fff;
+}
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+*::selection {
+    background: var(--orange);
+    color: var(--white);
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-size: 1.6rem;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--dark-bg);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+header .logo span {
+    color: var(--orange);
+}
+
+header .navbar a {
+    color: var(--white);
+    font-size: 1.8rem;
+    margin: 0 .8rem;
+    transition: color 0.2s ease-in-out;
+}
+
+header .navbar a:hover {
+    color: var(--orange);
+}
+
+header .icons i {
+    font-size: 2.5rem;
+    color: var(--white);
+    cursor: pointer;
+    margin-right: 2rem;
+    transition: color 0.2s ease-in-out;
+}
+
+header .icons i:hover {
+    color: var(--orange);
+}
+
+#menu-bar {
+    display: none;
+    color: var(--white);
+    border: .1rem solid var(--white);
+    border-radius: .5rem;
+    font-size: 3rem;
+    padding: .5rem 1.2rem;
+    cursor: pointer;
+}
+
+.top-container {
+    background-image: url('https://images.unsplash.com/photo-1653233797467-1a528819fd4f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.top-container h1 {
+    color: #fff;
+    font-size: 4rem;
+    font-family: 'Impact', 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 2px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+}
+
+.bottom-container {
+    padding: 2rem 5%;
+    background: var(--white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    margin: 2rem 9%;
+}
+
+.bottom-container p.text {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin: 2rem 0;
+}
+
+.bottom-container p.text b {
+    color: var(--orange);
+}
+
+.footer {
+    background: var(--dark-bg);
+    color: var(--white);
+    padding: 2rem 9%;
+}
+
+.footer .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.footer .box {
+    flex: 1 1 22rem;
+    padding: 1rem 0;
+}
+
+.footer .box h3 {
+    font-size: 2.2rem;
+    padding: .7rem 0;
+    color: var(--white);
+}
+
+.footer .box p {
+    font-size: 1.6rem;
+    padding: .7rem 0;
+    color: #ddd;
+}
+
+.footer .box a {
+    display: block;
+    font-size: 1.6rem;
+    padding: .7rem 0;
+    color: #ddd;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer .box a:hover {
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+.footer .credit {
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 1.8rem;
+    color: var(--white);
+    border-top: .1rem solid rgba(255, 255, 255, 0.2);
+}
+
+.footer .credit span {
+    color: var(--orange);
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    header {
+        padding: 1.5rem 5%;
+    }
+
+    section {
+        padding: 1.5rem 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-bar {
+        display: block;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: var(--dark-bg);
+        border-top: .1rem solid rgba(255, 255, 255, 0.2);
+        padding: 1rem 2rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path 0.5s ease-in-out;
+    }
+
+    header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    header .navbar a {
+        display: block;
+        border-radius: .5rem;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        background: var(--dark-bg);
+    }
+}
+
+
+</style>
+</head>
+<body>
+    <header>
+        <div id="menu-bar" class="fas fa-bars" ></div>
+
+        <a href="#" class="logo"><span>S</span>arva <span>S</span>arathi</a> 
+        <nav class="navbar">
+            <a href="index.php#home">Home</a>
+            <a href="index.php#packages">Packages</a>
+            <a href="index.php#services">Services</a>
+            <a href="index.php#blogs">Blogs</a>
+            <a href="index.php#book">Book</a>
+            <a href="index.php#review">Review</a>
+            <a href="index.php">Contact</a>
+            <a href="b9.html">Next Blog</a>
+        </nav>
+        
+    </header>
+<div class="top-container">
+      <h1>THE BEST CLEANING TECHNIQUES FOR DIFFERENT <br> SURFACES AND MATERIALS IN YOUR HOME</h1>
+</div>
+<div class="bottom-container">
+<p class="text">
+   <b> The best cleaning techniques for different surfaces and materials in your home</b>
+    We at Maid in Jaipur are aware that how long the germs can remain on various surfaces is a current worry shared by all homeowners. You may have questions about how to clean various types of surfaces now that we have discussed cleaning standards and practises that you should adhere to at home. Particularly in the foyer, which is the first room you enter when you return home. This article will discuss the best cleaning techniques for different surfaces that can be found in a home. We will also let you know how long germs should survive on these surfaces. <br><br>
+   <b> Metal</b>
+    With these fundamental facts in mind, we have created a list of surfaces that can be found in homes or entryways, along with instructions for cleaning each type of surface so that the virus will not spread to other people. <br><br>
+    We wanted to start here because it is conceivably the best of the lost. Germs does not do well in metals like copper and aluminium. They do not like this stuff, and they pass away in four to eight hours. As a result, we advise that you clean these items as you normally would. Your metal console tables and key holders should be cleaned with a soap-and-water solution. By doing this, you can prevent the virus from thriving on these items. <br><br>
+   <b> Wood</b>
+    The germs can survive for up to four days on wood, according to experts. We think that this is a cause for worry. Given the extensive use of wooden furniture in Indian homes, we must exercise caution when cleaning these items and be knowledgeable about how to clean various types of surfaces. Console tables and wooden shoe racks are two common items found in homes. By disinfecting these pieces of furniture with cleaning agents containing ethanol alcohol or hydrogen peroxide, you can successfully inactivate the virus. <br><br>
+     <b>Plastics</b>
+    Another material where the germsthrive is plastic. On anything made of plastic, it can last up to five days. The plastic items in your foyer should be cleaned frequently. Door bells are also considered a high-touch surface that needs special cleaning solutions. In the same way, if you have any plastic décor items on your foyer table, we advise you to temporarily store them. Use plastic products less frequently at home during these times. <br><br>
+    <b>Steel</b>
+    In terms of germs lifespan, steel performs marginally better than other metals and plastic. The germs can survive for up to two days on steel. Therefore, it is imperative that you continue to clean all stainless-steel objects. These have been identified as key holders and doorknobs. Doorknobs, another high-touch surface, must be cleaned with an alcohol-based cleaning solution several times per day. <br><br>
+   <b> Glass</b>
+    We all love adding accent mirrors to our homes, let us face it, but who knew the germs could call that piece of furniture home? According to experts at maid agency in Jaipur, germs can survive for up to four days on glass. As a result, it is crucial to continue washing your glass table tops and mirrors with a soapy water solution. And then use an alcohol-based spray to disinfect it afterward. <br><br>
+   <b> Cleaning Supplies you need For Different Surfaces and Materials</b> <br><br>
+    <b>1. An effective all-purpose cleaner</b>
+    With a dish sponge or cloth and a good all-purpose cleaner, you can complete most small housecleaning tasks. Alternatively, you can make your own cleaner for different surfaces and materials by following these instructions: <br>
+    Take a few tablespoons of washing up liquid or distilled white vinegar. Combine the ingredients above with about a litre of warm water. Shake vigorously, then pour contents into a spray bottle of your choice. <br><br>
+   <b>2. A Slightly Abrasive Cleaner</b>
+    This will enable you to scrub away tough dirt and help you get rid of anything that a multipurpose cleaner cannot help you remove. However, be careful not to choose anything too abrasive as this could result in scratching, especially on polished surfaces. <br><br>
+   <b>3. Baking or washing soda</b>
+    Baking soda is a fantastic cleaning product because it effectively dissolves almost any dirt without being acidic. This makes it perfect for tiled surfaces because more acidic cleaners will eat away at the grouting. Additionally, it is an excellent cleaning tool for bathrooms and kitchens. <br><br>
+    To make a solution that can clean out the fridge and the oven, combine 3 parts warm water to 1 part baking soda. To make a thicker paste for bathroom cleaning, mix in some dishwashing liquid. Baking soda is a powerful odour-eater as well. Put some baking soda in a small dish and place it in your refrigerator to block odours. To keep your refrigerator smelling clean and fresh, keep in mind to swap out this dish about once a month. <br><br>
+    Although washing soda is much more alkaline than baking soda, it can be used in the same manner. <br><br>
+    <b>4. Lemon juice and white vinegar</b>
+    In addition to serving many of the same functions as baking soda, white vinegar and lemon juice also have the benefit of being able to dissolve alkaline deposits like limescale and soap scum. Combine vinegar and water into a solution in equal parts for effective cleaning of polished wood and glass surfaces. Afterward, wipe the area with diluted lemon juice to get rid of the odour. Drains can be effectively cleaned and deodorised with lemon juice: Just combine a solution of water and equal parts and pour it down. <br><br>
+   <b>5. Cleaning sponges and microfiber towels</b>
+    Microfiber cloths and dish sponges will be a crucial part of house maid cleaning supplies. Most surfaces can be cleaned with these. Dish sponges work well for tough cleaning tasks, while dampened cloths work well for any situation that calls for more delicate care. They are also ideal for a final wipe down after cleaning. Due to the tiny polyester and nylon fibres, microfibre cloths work best with just a little water to remove even the smallest dirt particles. <br><br>
+    When using cleaning products, safety is paramount. Wear the proper protective gear, such as rubber gloves, follow all product instructions, and test any product first in a small area to make sure it will not damage your surface. When using potent chemical cleaners like bleach, the room should always be ventilated.
+</p>
+</div>
+<script>
+ let menu = document.querySelector('#menu-bar');
+let navbar = document.querySelector('.navbar');
+
+window.onscroll = () =>{
+    menu.classList.remove('fa-times');
+    navbar.classList.remove('active');
+    
+}
+
+menu.addEventListener('click', () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+});
+</script>
+</body>
+
+<section class="footer">
+    <div class="box-container">
+
+        <div class="box">
+            <h3>About Us</h3>
+           <p>Our skilled team offers tailored services with top-notch equipment and products. Enjoy hassle-free cleaning with a customized plan that suits your budget and schedule. Book now for exceptional customer service and a sparkling clean space.</p>
+        </div>
+        <div class="box">
+            <h3>Branch Location</h3>
+           <a href="#">Udupi</a>
+           <a href="#">Kundapura</a>
+           <a href="#">Kota</a>
+           <a href="#">Brahmavar</a>
+        </div>
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="index.php#home">Home</a>
+                <a href="index.php#packages">Packages</a>
+                <a href="index.php#services">Services</a>
+                <a href="index.php#blogs">Blogs</a>
+                <a href="index.php#book">Book</a>
+                <a href="index.php#review">Review</a>
+                <a href="index.php#contact">Contact</a>
+    
+        </div>
+        <div class="box">
+            <h3>Contact</h3>
+           <a href="#">9686143248</a>
+           <a href="#">9902554356</a>
+           <a href="#">saravasarathi@gmail.com</a>
+           <a href="#">Near kedior hotel,udupi</a>
+        </div>
+
+</div>
+
+<h1 class="credit">created by <span>avs</span> | all rights reserved!</h1>
+</section>
+
+<html>

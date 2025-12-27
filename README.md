@@ -37,13 +37,13 @@ Password: Test@123
 
 ## 📂 Project Structure 
 Sarva-Sarathi/
-│── assets/
-│── css/
-│── uploads/
-│── connect.php
-│── index.php
-│── dashboard.php
-│── other modules…
+- │── assets/
+- │── css/
+- │── uploads/
+- │── connect.php
+- │── index.php
+- │── dashboard.php
+- │── other modules…
 
 ---
 
